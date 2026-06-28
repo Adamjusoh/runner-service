@@ -12,15 +12,37 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm app-navbar">
         <div class="container-xl">
             <a href="<?= base_url('/') ?>" class="navbar-brand brand-link">Run2You</a>
-            <div class="d-flex align-items-center gap-3 ms-auto">
-                <?php if (session()->get('isLoggedIn')): ?>
-                    <span class="nav-user-text d-none d-md-inline">Hello, <strong><?= esc(session()->get('full_name')) ?></strong> (<?= ucfirst(session()->get('user_type')) ?>)</span>
-                    <a href="<?= base_url(session()->get('user_type') . '/dashboard') ?>" class="nav-link-muted">Dashboard</a>
-                    <a href="<?= base_url('/logout') ?>" class="btn-logout">Logout</a>
-                <?php else: ?>
-                    <a href="<?= base_url('/login') ?>" class="nav-link-muted">Login</a>
-                    <a href="<?= base_url('/register') ?>" class="btn btn-primary btn-sm">Register</a>
-                <?php endif; ?>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/') ?>">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/about') ?>">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/solution') ?>">Product Solution</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/features') ?>">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url('/pricing') ?>">Pricing</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <?php if (session()->get('isLoggedIn')): ?>
+                        <span class="nav-user-text d-none d-md-inline">Hello, <strong><?= esc(session()->get('full_name')) ?></strong> (<?= ucfirst(session()->get('user_type')) ?>)</span>
+                        <a href="<?= base_url(session()->get('user_type') . '/dashboard') ?>" class="nav-link-muted">Dashboard</a>
+                        <a href="<?= base_url('/logout') ?>" class="btn-logout">Logout</a>
+                    <?php else: ?>
+                        <a href="<?= base_url('/login') ?>" class="nav-link-muted">Login</a>
+                        <a href="<?= base_url('/register') ?>" class="btn btn-primary btn-sm">Register</a>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </nav>
