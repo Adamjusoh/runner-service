@@ -11,7 +11,7 @@ class OrderModel extends Model
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     
-    protected $allowedFields    = ['customer_id', 'run_id', 'total_item_cost', 'status'];
+    protected $allowedFields    = ['customer_id', 'run_id', 'delivery_address', 'total_item_cost', 'status'];
 
     protected $useTimestamps    = true;
     protected $createdField     = 'created_at';

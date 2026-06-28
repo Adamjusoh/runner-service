@@ -3,45 +3,62 @@
 <?= $this->section('title') ?>Active Run Manifest<?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
-<div class="mb-6 flex justify-between items-end">
+<div class="manifest-header d-flex flex-column flex-sm-row justify-content-between align-items-sm-end gap-3">
     <div>
-        <a href="<?= base_url('/runner/dashboard') ?>" class="text-sm text-indigo-600 hover:underline mb-2 inline-block">&larr; Back to Dashboard</a>
-        <h1 class="text-2xl font-bold text-gray-900">Shopping List: <?= esc($run['location']) ?></h1>
+        <a href="<?= base_url('/runner/dashboard') ?>" class="link-back small text-decoration-none d-inline-block mb-2">&larr; Back to Dashboard</a>
+        <h1 class="page-title-sm">Shopping List: <?= esc($run['location']) ?></h1>
+        <p class="manifest-status-text">
+            Status:
+            <span class="manifest-status-value"><?= esc(ucfirst(str_replace('_', ' ', $run['status']))) ?></span>
+        </p>
     </div>
+
+    <?php if ($canComplete): ?>
+        <form action="<?= base_url('/runner/run/complete/' . $run['run_id']) ?>" method="POST" onsubmit="return confirm('Mark this run as delivered?');">
+            <?= csrf_field() ?>
+            <button type="submit" class="btn btn-success btn-sm shadow-sm">
+                Mark Run as Delivered
+            </button>
+        </form>
+    <?php elseif ($run['status'] === 'delivered'): ?>
+        <span class="badge-completed">Delivery Completed</span>
+    <?php endif; ?>
 </div>
 
-<div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+<div class="app-card overflow-hidden">
     <?php if (empty($shoppingList)): ?>
-        <div class="p-8 text-center text-gray-500">
+        <div class="empty-state">
             No one has placed an order for this run yet.
         </div>
     <?php else: ?>
-        <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-indigo-50">
-                <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-indigo-800 uppercase tracking-wider">Item to Buy</th>
-                    <th class="px-6 py-3 text-center text-xs font-medium text-indigo-800 uppercase tracking-wider">Qty</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-indigo-800 uppercase tracking-wider">Customer Info & Address</th>
-                    <th class="px-6 py-3 text-center text-xs font-medium text-indigo-800 uppercase tracking-wider">Check</th>
-                </tr>
-            </thead>
-            
-            <tbody class="bg-white divide-y divide-gray-200">
-                <?php foreach ($shoppingList as $item): ?>
-                    <tr class="hover:bg-gray-50 transition">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900"><?= esc($item['item_name']) ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-center font-bold text-indigo-600 bg-indigo-50/30"><?= esc($item['total_quantity']) ?></td>
-                        <td class="px-6 py-4 text-sm text-gray-600">
-                            <strong><?= esc($item['customer_name']) ?></strong><br>
-                            <span class="text-xs text-gray-500 break-words"><?= esc($item['delivery_address']) ?></span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-center">
-                            <input type="checkbox" class="h-5 w-5 text-indigo-600 border-gray-300 rounded cursor-pointer">
-                        </td>
+        <div class="table-responsive">
+            <table class="table table-app table-manifest">
+                <thead>
+                    <tr>
+                        <th>Item to Buy</th>
+                        <th class="text-center">Qty</th>
+                        <th>Customer Info &amp; Address</th>
+                        <th class="text-center">Check</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    <?php foreach ($shoppingList as $item): ?>
+                        <tr>
+                            <td class="fw-bold"><?= esc($item['item_name']) ?></td>
+                            <td class="qty-cell"><?= esc($item['total_quantity']) ?></td>
+                            <td class="text-muted">
+                                <strong class="text-body"><?= esc($item['customer_name']) ?></strong><br>
+                                <span class="delivery-address-text"><?= esc($item['delivery_address']) ?></span>
+                            </td>
+                            <td class="text-center">
+                                <input type="checkbox" class="form-check-input checkbox-lg">
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
     <?php endif; ?>
 </div>
 <?= $this->endSection() ?>

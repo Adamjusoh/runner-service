@@ -28,6 +28,7 @@ $routes->group('runner', ['filter' => 'role:runner'], function($routes) {
     $routes->get('run/create', 'RunnerController::createRun');
     $routes->post('run/store', 'RunnerController::storeRun');
     $routes->get('run/active/(:num)', 'RunnerController::activeRun/$1');
+    $routes->post('run/complete/(:num)', 'RunnerController::completeRun/$1');
 });
 
 // Protected Administrative Environment Routes

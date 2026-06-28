@@ -17,6 +17,40 @@ class RunModel extends Model
     protected $createdField     = 'created_at';
     protected $updatedField     = 'updated_at';
 
+    public function isAcceptingOrders(?array $run): bool
+    {
+        if ($run === null || $run['status'] !== 'open') {
+            return false;
+        }
+
+        return strtotime($run['cutoff_time']) > time();
+    }
+
+    public function closeExpiredRunsForRunner(int $runnerId): void
+    {
+        $expiredRuns = $this->where('runner_id', $runnerId)
+            ->where('status', 'open')
+            ->where('cutoff_time <', date('Y-m-d H:i:s'))
+            ->findAll();
+
+        foreach ($expiredRuns as $expired) {
+            $this->update($expired['run_id'], ['status' => 'closed_for_shopping']);
+        }
+    }
+
+    public function canMarkDelivered(?array $run): bool
+    {
+        if ($run === null || $run['status'] === 'delivered' || $run['status'] === 'cancelled') {
+            return false;
+        }
+
+        if ($run['status'] === 'closed_for_shopping') {
+            return true;
+        }
+
+        return $run['status'] === 'open' && strtotime($run['cutoff_time']) <= time();
+    }
+
     public function getShoppingList($run_id)
     {
         $db = \Config\Database::connect();
