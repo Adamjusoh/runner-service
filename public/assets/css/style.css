@@ -1,0 +1,57 @@
+/* public/assets/css/style.css */
+
+/* Custom Brand Colors (Overrides standard primary) */
+:root {
+    --run2you-primary: #4f46e5;
+    --run2you-hover: #4338ca;
+}
+
+.text-primary {
+    color: var(--run2you-primary) !important;
+}
+
+.btn-primary {
+    background-color: var(--run2you-primary);
+    border-color: var(--run2you-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--run2you-hover);
+    border-color: var(--run2you-hover);
+}
+
+/* Custom Card Styling */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Add a slight lift effect when hovering over interactive cards (like in the Dashboard) */
+a.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+a.card-link:hover .card {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Navbar Tweaks */
+.navbar {
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.navbar-brand {
+    letter-spacing: -0.5px;
+}
+
+/* Badge Styling */
+.badge-status {
+    padding: 0.4em 0.8em;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
