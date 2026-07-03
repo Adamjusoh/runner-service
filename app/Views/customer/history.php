@@ -37,7 +37,7 @@
                 <div class="order-card-header d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
                     <div>
                         <h3 class="h5 fw-bold mb-1">Run: <?= esc($order['location']) ?></h3>
-                        <p class="text-muted small mb-0">Placed on <?= date('d M Y, h:i A', strtotime($order['created_at'])) ?></p>
+                        <p class="text-muted small mb-0">Placed on <?= date('d M Y, h:i A', strtotime($order['created_at'])) ?> &bull; <strong class="text-body">Est. Delivery: <?= date('d M Y, h:i A', strtotime($order['delivery_time'])) ?></strong></p>
                     </div>
                     <div class="d-flex align-items-center gap-3">
                         <span class="small text-muted"><strong>Delivery Fee:</strong> RM <?= number_format($order['delivery_fee'], 2) ?></span>

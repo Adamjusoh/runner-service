@@ -72,6 +72,7 @@
         <?= $this->renderSection('content') ?>
     </main>
 
+    <?php if (strpos(uri_string(), 'dashboard') === false): ?>
     <footer class="app-footer py-5 mt-auto">
         <div class="container-xl">
             <div class="row g-4">
@@ -112,6 +113,7 @@
             </div>
         </div>
     </footer>
+    <?php endif; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

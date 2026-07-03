@@ -61,4 +61,23 @@
         </div>
     <?php endif; ?>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const runId = <?= esc($run['run_id']) ?>;
+    const checkboxes = document.querySelectorAll('.checkbox-lg');
+    
+    // Load state
+    checkboxes.forEach((checkbox, index) => {
+        const key = `run_${runId}_item_${index}`;
+        if (localStorage.getItem(key) === 'true') {
+            checkbox.checked = true;
+        }
+        
+        // Save state on change
+        checkbox.addEventListener('change', function() {
+            localStorage.setItem(key, this.checked);
+        });
+    });
+});
+</script>
 <?= $this->endSection() ?>
