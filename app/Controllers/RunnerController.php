@@ -38,6 +38,18 @@ class RunnerController extends BaseController
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
 
+        $cutoffTime = strtotime($this->request->getPost('cutoff_time'));
+        $deliveryTime = strtotime($this->request->getPost('delivery_time'));
+        $now = time();
+
+        if ($cutoffTime <= $now) {
+            return redirect()->back()->withInput()->with('error', 'Cut-off time must be in the future.');
+        }
+
+        if ($deliveryTime <= $cutoffTime) {
+            return redirect()->back()->withInput()->with('error', 'Delivery time must be after the cut-off time.');
+        }
+
         $runModel = new RunModel();
 
         $runModel->save([

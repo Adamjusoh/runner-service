@@ -26,12 +26,63 @@ class OrderModel extends Model
     }
 
     // Order history
-    public function getCustomerHistory($customerId)
+    public function getCustomerHistoryWithItems($customerId)
     {
-        return $this->select('orders.*, runs.location, runs.delivery_time, runs.delivery_fee, runs.status as run_status')
+        $orders = $this->select('orders.*, runs.location, runs.delivery_time, runs.delivery_fee, runs.status as run_status')
                     ->join('runs', 'runs.run_id = orders.run_id')
                     ->where('orders.customer_id', $customerId)
                     ->orderBy('orders.created_at', 'DESC')
                     ->findAll();
+                    
+        if (empty($orders)) {
+            return [];
+        }
+
+        $orderIds = array_column($orders, 'order_id');
+        
+        $orderItemModel = new \App\Models\OrderItemModel();
+        $allItems = $orderItemModel->whereIn('order_id', $orderIds)->findAll();
+        
+        // Group items by order_id
+        $itemsByOrder = [];
+        foreach ($allItems as $item) {
+            $itemsByOrder[$item['order_id']][] = $item;
+        }
+        
+        // Attach items to orders
+        foreach ($orders as &$order) {
+            $order['items'] = $itemsByOrder[$order['order_id']] ?? [];
+        }
+        
+        return $orders;
+    }
+
+    public function createOrderWithItems($customerId, $runId, $deliveryAddress, $validItems)
+    {
+        $db = \Config\Database::connect();
+        $db->transStart();
+
+        $this->save([
+            'customer_id'      => $customerId,
+            'run_id'           => $runId,
+            'delivery_address' => $deliveryAddress,
+            'total_item_cost'  => 0.00,
+            'status'           => 'paid',
+        ]);
+
+        $orderId = $this->getInsertID();
+        $orderItemModel = new \App\Models\OrderItemModel();
+
+        foreach ($validItems as $item) {
+            $orderItemModel->save([
+                'order_id'  => $orderId,
+                'item_name' => $item['item_name'],
+                'quantity'  => $item['quantity'],
+            ]);
+        }
+
+        $db->transComplete();
+
+        return $db->transStatus();
     }
 }

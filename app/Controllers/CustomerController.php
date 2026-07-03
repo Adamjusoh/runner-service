@@ -75,32 +75,10 @@ class CustomerController extends BaseController
         }
 
         $orderModel = new OrderModel();
-        $orderItemModel = new OrderItemModel();
 
-        $db = \Config\Database::connect();
-        $db->transStart();
+        $success = $orderModel->createOrderWithItems(session()->get('user_id'), $runId, $deliveryAddress, $validItems);
 
-        $orderModel->save([
-            'customer_id'      => session()->get('user_id'),
-            'run_id'           => $runId,
-            'delivery_address' => $deliveryAddress,
-            'total_item_cost'  => 0.00,
-            'status'           => 'paid',
-        ]);
-
-        $orderId = $orderModel->getInsertID();
-
-        foreach ($validItems as $item) {
-            $orderItemModel->save([
-                'order_id'  => $orderId,
-                'item_name' => $item['item_name'],
-                'quantity'  => $item['quantity'],
-            ]);
-        }
-
-        $db->transComplete();
-
-        if ($db->transStatus() === false) {
+        if (!$success) {
             return redirect()->back()->with('error', 'Failed to place order. Please try again.');
         }
 
@@ -110,15 +88,7 @@ class CustomerController extends BaseController
     public function history()
     {
         $orderModel = new OrderModel();
-        $orderItemModel = new OrderItemModel();
-
-        $orders = $orderModel->getCustomerHistory(session()->get('user_id'));
-
-        foreach ($orders as &$order) {
-            $order['items'] = $orderItemModel->where('order_id', $order['order_id'])->findAll();
-        }
-
-        $data['orders'] = $orders;
+        $data['orders'] = $orderModel->getCustomerHistoryWithItems(session()->get('user_id'));
 
         return view('customer/history', $data);
     }
