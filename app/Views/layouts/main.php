@@ -75,7 +75,7 @@
         <?= $this->renderSection('content') ?>
     </main>
 
-    <?php if (strpos(uri_string(), 'dashboard') === false): ?>
+    <?php if (strpos(uri_string(), 'dashboard') === false && strpos(uri_string(), 'history') === false): ?>
     <footer class="app-footer py-5 mt-auto">
         <div class="container-xl">
             <div class="row g-4">
