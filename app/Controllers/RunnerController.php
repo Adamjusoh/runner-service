@@ -66,19 +66,13 @@ class RunnerController extends BaseController
 
     public function activeRun($run_id = null)
     {
-        $runModel = new RunModel();
-        $runnerId = (int) session()->get('user_id');
-
-        $runModel->closeExpiredRunsForRunner($runnerId);
-
-        $run = $runModel->where('run_id', $run_id)
-            ->where('runner_id', $runnerId)
-            ->first();
+        $run = $this->getRunnerRun($run_id);
 
         if (!$run) {
             return redirect()->to('/runner/dashboard')->with('error', 'Run schedule not found.');
         }
 
+        $runModel = new RunModel();
         $data['run']          = $run;
         $data['shoppingList'] = $runModel->getShoppingList($run_id);
         $data['canComplete']  = $runModel->canMarkDelivered($run);
@@ -88,18 +82,13 @@ class RunnerController extends BaseController
 
     public function completeRun($run_id = null)
     {
-        $runModel = new RunModel();
-        $runnerId = (int) session()->get('user_id');
-
-        $runModel->closeExpiredRunsForRunner($runnerId);
-
-        $run = $runModel->where('run_id', $run_id)
-            ->where('runner_id', $runnerId)
-            ->first();
+        $run = $this->getRunnerRun($run_id);
 
         if (!$run) {
             return redirect()->to('/runner/dashboard')->with('error', 'Run schedule not found.');
         }
+
+        $runModel = new RunModel();
 
         if (!$runModel->canMarkDelivered($run)) {
             return redirect()->to('/runner/run/active/' . $run_id)->with('error', 'This run cannot be marked as delivered yet.');
@@ -108,5 +97,17 @@ class RunnerController extends BaseController
         $runModel->update($run_id, ['status' => 'delivered']);
 
         return redirect()->to('/runner/dashboard')->with('success', 'Run marked as delivered. Great job!');
+    }
+
+    private function getRunnerRun($run_id)
+    {
+        $runModel = new RunModel();
+        $runnerId = (int) session()->get('user_id');
+
+        $runModel->closeExpiredRunsForRunner($runnerId);
+
+        return $runModel->where('run_id', $run_id)
+            ->where('runner_id', $runnerId)
+            ->first();
     }
 }

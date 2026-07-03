@@ -43,6 +43,7 @@ Account Registration
             <div class="mb-3">
                 <label class="form-label form-label-sm">Password</label>
                 <input type="password" name="password" required class="form-control form-control-sm">
+                <div class="form-text form-text-xs">Must be at least 8 characters long, containing at least one uppercase letter, one lowercase letter, and one number.</div>
             </div>
 
             <div class="mb-4">

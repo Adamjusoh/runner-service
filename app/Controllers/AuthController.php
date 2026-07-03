@@ -17,7 +17,7 @@ class AuthController extends BaseController
         $rules = [
             'full_name'     => 'required|min_length[3]|max_length[100]',
             'email'         => 'required|valid_email|is_unique[users.email]',
-            'password'      => 'required|min_length[6]',
+            'password'      => 'required|min_length[8]|regex_match[/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/]',
             'password_conf' => 'matches[password]',
             'user_type'     => 'required|in_list[customer,runner]'
         ];
