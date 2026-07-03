@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --run2you-primary: #991b1b;
-    --run2you-primary-hover: #7f1d1d;
-    --run2you-primary-light: #fef2f2;
-    --run2you-primary-muted: #b91c1c;
+    --run2you-primary: #ea580c;
+    --run2you-primary-hover: #c2410c;
+    --run2you-primary-light: #ffedd5;
+    --run2you-primary-muted: #f97316;
     --run2you-body-bg: #f8fafc;
     --run2you-border: #e2e8f0;
     --run2you-text: #1e293b;
     --run2you-text-muted: #64748b;
     --run2you-success: #16a34a;
     --run2you-success-hover: #15803d;
-    --run2you-gradient-start: #991b1b;
-    --run2you-gradient-end: #dc2626;
+    --run2you-gradient-start: #ea580c;
+    --run2you-gradient-end: #f97316;
     --run2you-radius: 0.75rem;
     --run2you-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     --run2you-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
@@ -226,7 +226,7 @@ body, html {
 /* Hero Section */
 .hero-section {
     background: linear-gradient(180deg, var(--run2you-primary-light) 0%, #ffffff 100%);
-    border: 1px solid #fecaca;
+    border: 1px solid #fed7aa;
     border-radius: var(--run2you-radius);
     padding: 5rem 2rem;
     margin-bottom: 3rem;
@@ -244,6 +244,62 @@ body, html {
     color: var(--run2you-text);
     position: relative;
     z-index: 1;
+}
+
+/* Glassmorphism utility */
+.glass-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card-hover {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.glass-card-hover:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-image-wrapper {
+    position: relative;
+    padding: 1rem;
+}
+
+.hero-main-img {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.mock-run-card {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    padding: 1.25rem;
+    width: 280px;
+    z-index: 10;
+    transform: translateY(0);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.mock-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-tagline {
@@ -458,7 +514,7 @@ body, html {
 
 .role-card-dark {
     background: var(--run2you-primary-light);
-    border: 1px solid #fecaca;
+    border: 1px solid #fed7aa;
     color: var(--run2you-text);
 }
 
@@ -484,8 +540,8 @@ body, html {
    SOLUTION PAGE — Problem/Solution Sections
    ===================================================== */
 .problem-section {
-    background: #fffafa;
-    border: 1px solid #fee2e2;
+    background: #fffaf5;
+    border: 1px solid #ffedd5;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
     margin-bottom: 2rem;
@@ -682,7 +738,7 @@ body, html {
    ===================================================== */
 .pricing-banner {
     background: var(--run2you-primary-light);
-    border: 1px solid #fecaca;
+    border: 1px solid #fed7aa;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
     margin-bottom: 2.5rem;
@@ -945,17 +1001,16 @@ body, html {
 }
 
 /* How It Works steps */
-.step-number {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--run2you-gradient-start), var(--run2you-gradient-end));
-    color: #fff;
+.step-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    background: var(--run2you-primary-light);
+    color: var(--run2you-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 1.75rem;
     flex-shrink: 0;
 }
 
@@ -970,7 +1025,7 @@ body, html {
     left: 100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #fecaca, transparent);
+    background: linear-gradient(90deg, #fed7aa, transparent);
 }
 
 /* =====================================================
@@ -1223,7 +1278,7 @@ body, html {
     margin-top: 1rem;
     margin-bottom: 0;
     font-size: 0.875rem;
-    color: #fecaca;
+    color: #fed7aa;
 }
 
 .admin-revenue-circle {

@@ -5,22 +5,47 @@
 <?= $this->section('content') ?>
 
 <!-- Hero Section -->
-<div class="hero-section text-center">
-    <span class="badge-pill-primary mb-3 d-inline-block">🚀 Community-Powered Delivery</span>
-    <h1 class="hero-title mb-3">Run2You</h1>
-    <p class="hero-tagline mb-3">
-        "Your community-powered neighborhood errand &amp; grocery delivery service."
-    </p>
-    <p class="hero-description mb-4">
-        A web application where community members (<strong>Runners</strong>) who are already heading to a store can list their runs, and neighbors (<strong>Customers</strong>) can request items to be bought and delivered — for a fraction of the cost.
-    </p>
-    <div class="hero-cta d-flex flex-wrap justify-content-center gap-3">
-        <a href="<?= base_url('/register') ?>" class="btn-hero-primary">
-            <i class="bi bi-person-plus-fill me-1"></i> Register Now
-        </a>
-        <a href="<?= base_url('/login') ?>" class="btn-hero-secondary">
-            <i class="bi bi-box-arrow-in-right me-1"></i> Login to Account
-        </a>
+<div class="hero-section">
+    <div class="row align-items-center position-relative z-1">
+        <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start pe-lg-4">
+            <span class="badge-pill-primary mb-3 d-inline-block">🚀 Community-Powered Delivery</span>
+            <h1 class="hero-title mb-3">Run2You</h1>
+            <p class="hero-tagline mb-3">
+                Your neighborhood errand &amp; grocery delivery service.
+            </p>
+            <p class="hero-description mb-4">
+                A web application where community members (<strong>Runners</strong>) who are already heading to a store can list their runs, and neighbors (<strong>Customers</strong>) can request items to be bought and delivered — for a fraction of the cost.
+            </p>
+            <div class="hero-cta d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                <a href="<?= base_url('/register') ?>" class="btn-hero-primary">
+                    <i class="bi bi-person-plus-fill me-1"></i> Register Now
+                </a>
+                <a href="<?= base_url('/login') ?>" class="btn-hero-secondary">
+                    <i class="bi bi-box-arrow-in-right me-1"></i> Login to Account
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6 position-relative text-center">
+            <div class="hero-image-wrapper">
+                <img src="<?= base_url('images/community_hero.png') ?>" alt="Neighbors sharing groceries" class="img-fluid rounded-4 shadow-lg hero-main-img" style="max-width: 90%;">
+                
+                <!-- Glassmorphism Mock Card Overlay -->
+                <div class="glass-card mock-run-card d-none d-md-block text-start">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="mock-avatar bg-primary text-white me-2"><i class="bi bi-person"></i></div>
+                        <div>
+                            <h6 class="mb-0 fw-bold">Sarah is at Trader Joe's</h6>
+                            <small class="text-muted">Heading back in 15 mins</small>
+                        </div>
+                    </div>
+                    <hr class="my-2">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="badge bg-success text-white">Accepting Orders</span>
+                        <small class="fw-bold text-primary">+$3.00 delivery</small>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -33,22 +58,22 @@
 </div>
 <div class="row g-4 mb-5">
     <div class="col-md-4">
-        <div class="feature-card text-center">
-            <div class="step-number mx-auto mb-3">1</div>
+        <div class="feature-card glass-card-hover text-center">
+            <div class="step-icon text-primary mx-auto mb-3"><i class="bi bi-cart-plus"></i></div>
             <h5 class="feature-card-title">Runner Creates a Run</h5>
             <p class="feature-card-text">A resident heading to the store publishes a run with the shop name, cut-off time, delivery fee, and estimated delivery time.</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="feature-card text-center">
-            <div class="step-number mx-auto mb-3">2</div>
+        <div class="feature-card glass-card-hover text-center">
+            <div class="step-icon text-primary mx-auto mb-3"><i class="bi bi-people"></i></div>
             <h5 class="feature-card-title">Customers Join &amp; Order</h5>
             <p class="feature-card-text">Neighbors browse open runs, join one heading to their preferred store, and add items they need to a shared order list.</p>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="feature-card text-center">
-            <div class="step-number mx-auto mb-3">3</div>
+        <div class="feature-card glass-card-hover text-center">
+            <div class="step-icon text-primary mx-auto mb-3"><i class="bi bi-box-seam"></i></div>
             <h5 class="feature-card-title">Runner Delivers</h5>
             <p class="feature-card-text">The runner purchases all items in one trip, delivers them to the neighbors, and earns the delivery fee. Everyone wins!</p>
         </div>

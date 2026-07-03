@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg app-navbar sticky-top">
         <div class="container-xl">
             <a href="<?= base_url('/') ?>" class="navbar-brand brand-link">
-                <i class="bi bi-lightning-charge-fill"></i> Run2You
+                <i class="bi bi-basket2-fill"></i> Run2You
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -77,7 +77,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 mb-3 mb-lg-0">
                     <a href="<?= base_url('/') ?>" class="footer-brand d-inline-block mb-2">
-                        <i class="bi bi-lightning-charge-fill"></i> Run2You
+                        <i class="bi bi-basket2-fill"></i> Run2You
                     </a>
                     <p class="app-footer-text mb-0" style="max-width:300px;">
                         Community-powered neighborhood errand and grocery delivery. By neighbors, for neighbors.
