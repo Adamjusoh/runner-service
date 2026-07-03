@@ -2,8 +2,8 @@
 
 /* Custom Brand Colors (Overrides standard primary) */
 :root {
-    --run2you-primary: #4f46e5;
-    --run2you-hover: #4338ca;
+    --run2you-primary: #991b1b;
+    --run2you-hover: #7f1d1d;
 }
 
 .text-primary {

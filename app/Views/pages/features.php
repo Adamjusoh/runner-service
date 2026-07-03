@@ -58,15 +58,15 @@
                                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:0.5rem; overflow:hidden; font-size:0.8rem;">
                                     <div style="padding:0.5rem 0.75rem; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between;">
                                         <span>Low Fat Milk</span>
-                                        <span style="font-weight:700; color:#4f46e5;">×2 (Ahmad)</span>
+                                        <span style="font-weight:700; color:#991b1b;">×2 (Ahmad)</span>
                                     </div>
                                     <div style="padding:0.5rem 0.75rem; border-bottom:1px solid #f1f5f9; display:flex; justify-content:space-between;">
                                         <span>Gardenia Bread</span>
-                                        <span style="font-weight:700; color:#4f46e5;">×1 (Sarah)</span>
+                                        <span style="font-weight:700; color:#991b1b;">×1 (Sarah)</span>
                                     </div>
                                     <div style="padding:0.5rem 0.75rem; display:flex; justify-content:space-between;">
                                         <span>Instant Noodles</span>
-                                        <span style="font-weight:700; color:#4f46e5;">×3 (Sarah)</span>
+                                        <span style="font-weight:700; color:#991b1b;">×3 (Sarah)</span>
                                     </div>
                                 </div>
                                 <button class="btn btn-sm w-100 mt-2" style="background:linear-gradient(135deg,#16a34a,#22c55e); color:#fff; font-size:0.8rem; font-weight:600; border:none; border-radius:0.5rem; padding:0.4rem;">
@@ -122,8 +122,8 @@
                                         <span class="badge-pill-success" style="font-size:0.7rem;">Accepting</span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-2 pt-2" style="border-top:1px solid #f1f5f9;">
-                                        <span style="font-weight:700; color:#4f46e5; font-size:0.9rem;">RM 2.00</span>
-                                        <button class="btn btn-sm" style="background:#4f46e5; color:#fff; font-size:0.75rem; font-weight:600; border:none; border-radius:0.375rem; padding:0.25rem 0.75rem;">Join Run</button>
+                                        <span style="font-weight:700; color:#991b1b; font-size:0.9rem;">RM 2.00</span>
+                                        <button class="btn btn-sm" style="background:#991b1b; color:#fff; font-size:0.75rem; font-weight:600; border:none; border-radius:0.375rem; padding:0.25rem 0.75rem;">Join Run</button>
                                     </div>
                                 </div>
                                 <div style="background:#fff; border:1px solid #e2e8f0; border-radius:0.5rem; padding:1rem;">
@@ -135,8 +135,8 @@
                                         <span class="badge-pill-success" style="font-size:0.7rem;">Accepting</span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center mt-2 pt-2" style="border-top:1px solid #f1f5f9;">
-                                        <span style="font-weight:700; color:#4f46e5; font-size:0.9rem;">RM 1.50</span>
-                                        <button class="btn btn-sm" style="background:#4f46e5; color:#fff; font-size:0.75rem; font-weight:600; border:none; border-radius:0.375rem; padding:0.25rem 0.75rem;">Join Run</button>
+                                        <span style="font-weight:700; color:#991b1b; font-size:0.9rem;">RM 1.50</span>
+                                        <button class="btn btn-sm" style="background:#991b1b; color:#fff; font-size:0.75rem; font-weight:600; border:none; border-radius:0.375rem; padding:0.25rem 0.75rem;">Join Run</button>
                                     </div>
                                 </div>
                             </div>

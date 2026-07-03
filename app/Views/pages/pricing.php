@@ -110,7 +110,7 @@
                 <div class="feature-icon feature-icon-primary" style="width:40px;height:40px;border-radius:10px;">
                     <i class="bi bi-graph-up-arrow" style="font-size:1.1rem;"></i>
                 </div>
-                <h4 class="mb-0" style="color:#312e81;">Financial Sustainability Analysis</h4>
+                <h4 class="mb-0" style="color:#450a0a;">Financial Sustainability Analysis</h4>
             </div>
             <p style="font-size:0.95rem; color:#475569; line-height:1.7; margin-bottom:1rem;">
                 In a typical apartment complex of 500 units, assuming a conservative estimate of 20 runs scheduled per week with an average of 4 orders per run:

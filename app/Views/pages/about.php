@@ -26,11 +26,11 @@
             <div class="table-responsive">
                 <table class="table table-bordered mb-0" style="font-size:0.9rem;">
                     <thead>
-                        <tr style="background:#e0e7ff;">
-                            <th style="color:#3730a3;">Student Name</th>
-                            <th style="color:#3730a3;">Student ID</th>
-                            <th style="color:#3730a3;">Task Role</th>
-                            <th style="color:#3730a3;">Academic Semester</th>
+                        <tr style="background:#fee2e2;">
+                            <th style="color:#7f1d1d;">Student Name</th>
+                            <th style="color:#7f1d1d;">Student ID</th>
+                            <th style="color:#7f1d1d;">Task Role</th>
+                            <th style="color:#7f1d1d;">Academic Semester</th>
                         </tr>
                     </thead>
                     <tbody>

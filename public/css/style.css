@@ -2,18 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --run2you-primary: #4f46e5;
-    --run2you-primary-hover: #4338ca;
-    --run2you-primary-light: #eef2ff;
-    --run2you-primary-muted: #6366f1;
+    --run2you-primary: #991b1b;
+    --run2you-primary-hover: #7f1d1d;
+    --run2you-primary-light: #fef2f2;
+    --run2you-primary-muted: #b91c1c;
     --run2you-body-bg: #f8fafc;
     --run2you-border: #e2e8f0;
     --run2you-text: #1e293b;
     --run2you-text-muted: #64748b;
     --run2you-success: #16a34a;
     --run2you-success-hover: #15803d;
-    --run2you-gradient-start: #4f46e5;
-    --run2you-gradient-end: #7c3aed;
+    --run2you-gradient-start: #991b1b;
+    --run2you-gradient-end: #dc2626;
     --run2you-radius: 0.75rem;
     --run2you-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     --run2you-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
@@ -219,7 +219,7 @@ body, html {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #312e81 0%, #4f46e5 50%, #7c3aed 100%);
+    background: linear-gradient(135deg, #450a0a 0%, #991b1b 50%, #dc2626 100%);
     border-radius: var(--run2you-radius);
     padding: 4rem 2rem;
     margin-bottom: 3rem;
@@ -261,7 +261,7 @@ body, html {
 
 .hero-tagline {
     font-size: 1.2rem;
-    color: #c7d2fe;
+    color: #fecaca;
     font-weight: 400;
     position: relative;
     z-index: 1;
@@ -269,7 +269,7 @@ body, html {
 
 .hero-description {
     font-size: 1rem;
-    color: #e0e7ff;
+    color: #fee2e2;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.7;
@@ -436,8 +436,8 @@ body, html {
 }
 
 .feature-icon-purple {
-    background: #f3e8ff;
-    color: #9333ea;
+    background: #fee2e2;
+    color: #dc2626;
 }
 
 .feature-card-title {
@@ -799,8 +799,8 @@ body, html {
 }
 
 .sustainability-card {
-    background: linear-gradient(135deg, #eef2ff, #ede9fe);
-    border: 1px solid #c7d2fe;
+    background: linear-gradient(135deg, #fef2f2, #fff1f2);
+    border: 1px solid #fecaca;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
 }
@@ -808,7 +808,7 @@ body, html {
 .sustainability-card h4 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #312e81;
+    color: #450a0a;
     margin-bottom: 1rem;
 }
 
@@ -827,7 +827,7 @@ body, html {
 .sustainability-metric-label {
     font-size: 0.85rem;
     font-weight: 600;
-    color: #4338ca;
+    color: #7f1d1d;
     min-width: 160px;
 }
 
@@ -840,8 +840,8 @@ body, html {
    ABOUT PAGE — Developer card, objectives
    ===================================================== */
 .about-assignment-card {
-    background: linear-gradient(135deg, #eef2ff, #f5f3ff);
-    border: 1px solid #c7d2fe;
+    background: linear-gradient(135deg, #fef2f2, #fff1f2);
+    border: 1px solid #fecaca;
     border-radius: var(--run2you-radius);
     padding: 2rem;
     margin-bottom: 2rem;
@@ -989,7 +989,7 @@ body, html {
     left: 100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #c7d2fe, transparent);
+    background: linear-gradient(90deg, #fecaca, transparent);
 }
 
 /* =====================================================
@@ -1194,7 +1194,7 @@ body, html {
     padding: 0.75rem 1.5rem;
     border-top: 1px solid #f3f4f6;
     font-size: 0.875rem;
-    color: #3730a3;
+    color: #7f1d1d;
 }
 
 .empty-state {
@@ -1225,7 +1225,7 @@ body, html {
 }
 
 .admin-revenue-title {
-    color: #e0e7ff;
+    color: #fee2e2;
     font-size: 1.125rem;
     font-weight: 500;
     margin-bottom: 0.25rem;
@@ -1242,7 +1242,7 @@ body, html {
     margin-top: 1rem;
     margin-bottom: 0;
     font-size: 0.875rem;
-    color: #c7d2fe;
+    color: #fecaca;
 }
 
 .admin-revenue-circle {
@@ -1297,8 +1297,8 @@ body, html {
 }
 
 .badge-role {
-    background-color: #e0e7ff;
-    color: #3730a3;
+    background-color: #fee2e2;
+    color: #7f1d1d;
     padding: 0.25em 0.5em;
     font-size: 0.75rem;
     font-weight: 600;
@@ -1349,7 +1349,7 @@ body, html {
 
 .table-manifest thead th {
     background-color: var(--run2you-primary-light);
-    color: #3730a3;
+    color: #7f1d1d;
 }
 
 .qty-cell {
@@ -1372,7 +1372,7 @@ body, html {
 }
 
 .btn-manifest:hover {
-    background-color: #e0e7ff;
+    background-color: #fee2e2;
     color: var(--run2you-primary-hover);
 }
 
@@ -1433,8 +1433,8 @@ body, html {
 }
 
 .btn-disabled-future {
-    background-color: #818cf8;
-    border-color: #818cf8;
+    background-color: #f87171;
+    border-color: #f87171;
     color: #fff;
     opacity: 1;
 }
