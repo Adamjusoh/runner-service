@@ -44,6 +44,9 @@
                 <div class="d-flex align-items-center gap-3">
                     <?php if (session()->get('isLoggedIn')): ?>
                         <span class="nav-user-text d-none d-md-inline">Hello, <strong><?= esc(session()->get('full_name')) ?></strong> (<?= ucfirst(session()->get('user_type')) ?>)</span>
+                        <?php if (session()->get('user_type') === 'customer'): ?>
+                            <a href="<?= base_url('/customer/history') ?>" class="nav-link-muted">My Orders</a>
+                        <?php endif; ?>
                         <a href="<?= base_url(session()->get('user_type') . '/dashboard') ?>" class="nav-link-muted">Dashboard</a>
                         <a href="<?= base_url('/logout') ?>" class="btn-logout">Logout</a>
                     <?php else: ?>

@@ -26,10 +26,10 @@
                 <?php for ($i = 1; $i <= 3; $i++): ?>
                 <div class="item-row">
                     <div class="item-row-grow">
-                        <input type="text" name="item_name[]" placeholder="Item name (e.g., Maggi Kari 5-pack)" class="form-control form-control-sm">
+                        <input type="text" name="item_name[]" class="form-control form-control-sm">
                     </div>
                     <div class="qty-input-col">
-                        <input type="number" name="quantity[]" placeholder="Qty" min="1" class="form-control form-control-sm">
+                        <input type="number" name="quantity[]" min="1" class="form-control form-control-sm">
                     </div>
                 </div>
                 <?php endfor; ?>
@@ -38,7 +38,7 @@
 
             <div class="form-divider mb-4">
                 <label class="form-label form-label-sm">Delivery Address / Drop-off Location</label>
-                <textarea name="delivery_address" required rows="2" placeholder="e.g., UniSZA Student Hostel, Block B, Level 2, Room 12" class="form-control form-control-sm"></textarea>
+                <textarea name="delivery_address" required rows="2" class="form-control form-control-sm"></textarea>
                 <p class="form-text-xs">Be specific so the runner knows exactly where to find you on campus or at home.</p>
             </div>
 
