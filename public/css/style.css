@@ -2,18 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-    --run2you-primary: #ea580c;
-    --run2you-primary-hover: #c2410c;
-    --run2you-primary-light: #ffedd5;
-    --run2you-primary-muted: #f97316;
+    --run2you-primary: #84a59d;
+    --run2you-primary-hover: #6d8c84;
+    --run2you-primary-light: #f2f5f4;
+    --run2you-primary-muted: #a3b8b3;
+    --run2you-accent: #e07a5f;
+    --run2you-accent-hover: #cc6a51;
     --run2you-body-bg: #f8fafc;
     --run2you-border: #e2e8f0;
-    --run2you-text: #1e293b;
-    --run2you-text-muted: #64748b;
+    --run2you-text: #1b261a;
+    --run2you-text-muted: #3b4d3a;
     --run2you-success: #16a34a;
     --run2you-success-hover: #15803d;
-    --run2you-gradient-start: #ea580c;
-    --run2you-gradient-end: #f97316;
+    --run2you-gradient-start: #84a59d;
+    --run2you-gradient-end: #a3b8b3;
     --run2you-radius: 0.75rem;
     --run2you-shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
     --run2you-shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
@@ -27,13 +29,13 @@ body, html {
 
 /* Bootstrap overrides */
 .btn-primary {
-    --bs-btn-bg: var(--run2you-primary);
-    --bs-btn-border-color: var(--run2you-primary);
-    --bs-btn-hover-bg: var(--run2you-primary-hover);
-    --bs-btn-hover-border-color: var(--run2you-primary-hover);
-    --bs-btn-active-bg: var(--run2you-primary-hover);
-    --bs-btn-active-border-color: var(--run2you-primary-hover);
-    --bs-btn-focus-shadow-rgb: 79, 70, 229;
+    --bs-btn-bg: var(--run2you-accent);
+    --bs-btn-border-color: var(--run2you-accent);
+    --bs-btn-hover-bg: var(--run2you-accent-hover);
+    --bs-btn-hover-border-color: var(--run2you-accent-hover);
+    --bs-btn-active-bg: var(--run2you-accent-hover);
+    --bs-btn-active-border-color: var(--run2you-accent-hover);
+    --bs-btn-focus-shadow-rgb: 224, 122, 95;
     border-radius: 0.5rem;
     font-weight: 600;
     padding: 0.5rem 1.25rem;
@@ -42,16 +44,16 @@ body, html {
 
 .btn-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.35);
 }
 
 .btn-outline-primary {
-    --bs-btn-color: var(--run2you-primary);
-    --bs-btn-border-color: var(--run2you-primary);
-    --bs-btn-hover-bg: var(--run2you-primary);
-    --bs-btn-hover-border-color: var(--run2you-primary);
-    --bs-btn-active-bg: var(--run2you-primary-hover);
-    --bs-btn-active-border-color: var(--run2you-primary-hover);
+    --bs-btn-color: var(--run2you-accent);
+    --bs-btn-border-color: var(--run2you-accent);
+    --bs-btn-hover-bg: var(--run2you-accent);
+    --bs-btn-hover-border-color: var(--run2you-accent);
+    --bs-btn-active-bg: var(--run2you-accent-hover);
+    --bs-btn-active-border-color: var(--run2you-accent-hover);
     border-radius: 0.5rem;
     font-weight: 600;
     padding: 0.5rem 1.25rem;
@@ -60,7 +62,7 @@ body, html {
 
 .btn-outline-primary:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 4px 12px rgba(224, 122, 95, 0.25);
 }
 
 .btn-outline-secondary {
@@ -226,7 +228,7 @@ body, html {
 /* Hero Section */
 .hero-section {
     background: linear-gradient(180deg, var(--run2you-primary-light) 0%, #ffffff 100%);
-    border: 1px solid #fed7aa;
+    border: 1px solid #c3d1cd;
     border-radius: var(--run2you-radius);
     padding: 5rem 2rem;
     margin-bottom: 3rem;
@@ -326,7 +328,7 @@ body, html {
 }
 
 .btn-hero-primary {
-    background: var(--run2you-primary);
+    background: var(--run2you-accent);
     color: #fff;
     border: none;
     font-weight: 600;
@@ -341,7 +343,7 @@ body, html {
 
 .btn-hero-primary:hover {
     transform: translateY(-1px);
-    background: var(--run2you-primary-hover);
+    background: var(--run2you-accent-hover);
     color: #fff;
     box-shadow: var(--run2you-shadow-md);
 }
@@ -514,7 +516,7 @@ body, html {
 
 .role-card-dark {
     background: var(--run2you-primary-light);
-    border: 1px solid #fed7aa;
+    border: 1px solid #c3d1cd;
     color: var(--run2you-text);
 }
 
@@ -540,8 +542,8 @@ body, html {
    SOLUTION PAGE — Problem/Solution Sections
    ===================================================== */
 .problem-section {
-    background: #fffaf5;
-    border: 1px solid #ffedd5;
+    background: #f2f5f4;
+    border: 1px solid #e8f0ee;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
     margin-bottom: 2rem;
@@ -738,7 +740,7 @@ body, html {
    ===================================================== */
 .pricing-banner {
     background: var(--run2you-primary-light);
-    border: 1px solid #fed7aa;
+    border: 1px solid #c3d1cd;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
     margin-bottom: 2.5rem;
@@ -1025,7 +1027,7 @@ body, html {
     left: 100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #fed7aa, transparent);
+    background: linear-gradient(90deg, #c3d1cd, transparent);
 }
 
 /* =====================================================
@@ -1278,7 +1280,7 @@ body, html {
     margin-top: 1rem;
     margin-bottom: 0;
     font-size: 0.875rem;
-    color: #fed7aa;
+    color: #c3d1cd;
 }
 
 .admin-revenue-circle {
