@@ -23,21 +23,22 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <?php $uri = uri_string(); ?>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/') ?>">Home</a>
+                        <a class="nav-link <?= ($uri == '' || $uri == '/') ? 'active' : '' ?>" href="<?= base_url('/') ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/about') ?>">About Us</a>
+                        <a class="nav-link <?= ($uri == 'about') ? 'active' : '' ?>" href="<?= base_url('/about') ?>">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/solution') ?>">Product Solution</a>
+                        <a class="nav-link <?= ($uri == 'solution') ? 'active' : '' ?>" href="<?= base_url('/solution') ?>">Product Solution</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/features') ?>">Features</a>
+                        <a class="nav-link <?= ($uri == 'features') ? 'active' : '' ?>" href="<?= base_url('/features') ?>">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url('/pricing') ?>">Pricing</a>
+                        <a class="nav-link <?= ($uri == 'pricing') ? 'active' : '' ?>" href="<?= base_url('/pricing') ?>">Pricing</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">

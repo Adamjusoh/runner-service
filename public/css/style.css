@@ -135,10 +135,16 @@ body, html {
     transition: all var(--run2you-transition);
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
+.navbar-nav .nav-link:hover {
     color: var(--run2you-primary) !important;
     background-color: var(--run2you-primary-light);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--run2you-primary) !important;
+    font-weight: 700;
+    border-bottom: 2px solid var(--run2you-primary);
+    border-radius: 0; /* Remove radius so the bottom border aligns perfectly */
 }
 
 .nav-user-text {
@@ -219,35 +225,15 @@ body, html {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #450a0a 0%, #991b1b 50%, #dc2626 100%);
+    background: linear-gradient(180deg, var(--run2you-primary-light) 0%, #ffffff 100%);
+    border: 1px solid #fecaca;
     border-radius: var(--run2you-radius);
-    padding: 4rem 2rem;
+    padding: 5rem 2rem;
     margin-bottom: 3rem;
     position: relative;
     overflow: hidden;
-    color: #fff;
-}
-
-.hero-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-}
-
-.hero-section::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    left: -5%;
-    width: 350px;
-    height: 350px;
-    background: rgba(255,255,255,0.04);
-    border-radius: 50%;
+    color: var(--run2you-text);
+    box-shadow: var(--run2you-shadow-sm);
 }
 
 .hero-title {
@@ -255,21 +241,22 @@ body, html {
     font-weight: 800;
     letter-spacing: -0.03em;
     line-height: 1.1;
+    color: var(--run2you-text);
     position: relative;
     z-index: 1;
 }
 
 .hero-tagline {
     font-size: 1.2rem;
-    color: #fecaca;
-    font-weight: 400;
+    color: var(--run2you-primary);
+    font-weight: 600;
     position: relative;
     z-index: 1;
 }
 
 .hero-description {
     font-size: 1rem;
-    color: #fee2e2;
+    color: var(--run2you-text-muted);
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.7;
@@ -283,42 +270,42 @@ body, html {
 }
 
 .btn-hero-primary {
-    background: #fff;
-    color: var(--run2you-primary);
+    background: var(--run2you-primary);
+    color: #fff;
     border: none;
-    font-weight: 700;
+    font-weight: 600;
     padding: 0.75rem 2rem;
-    border-radius: 0.625rem;
+    border-radius: 0.5rem;
     font-size: 1rem;
     transition: all var(--run2you-transition);
     text-decoration: none;
     display: inline-block;
+    box-shadow: var(--run2you-shadow-sm);
 }
 
 .btn-hero-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    color: var(--run2you-primary-hover);
+    transform: translateY(-1px);
+    background: var(--run2you-primary-hover);
+    color: #fff;
+    box-shadow: var(--run2you-shadow-md);
 }
 
 .btn-hero-secondary {
-    background: rgba(255,255,255,0.15);
-    color: #fff;
-    border: 1px solid rgba(255,255,255,0.3);
+    background: #ffffff;
+    color: var(--run2you-text);
+    border: 1px solid var(--run2you-border);
     font-weight: 600;
     padding: 0.75rem 2rem;
-    border-radius: 0.625rem;
+    border-radius: 0.5rem;
     font-size: 1rem;
     transition: all var(--run2you-transition);
     text-decoration: none;
     display: inline-block;
-    backdrop-filter: blur(4px);
 }
 
 .btn-hero-secondary:hover {
-    background: rgba(255,255,255,0.25);
-    color: #fff;
-    transform: translateY(-2px);
+    background: var(--run2you-body-bg);
+    color: var(--run2you-text);
 }
 
 /* Section Headers */
@@ -470,12 +457,13 @@ body, html {
 }
 
 .role-card-dark {
-    background: linear-gradient(135deg, #1e293b, #334155);
-    color: #fff;
+    background: var(--run2you-primary-light);
+    border: 1px solid #fecaca;
+    color: var(--run2you-text);
 }
 
 .role-card-light {
-    background: #fff;
+    background: #ffffff;
     border: 1px solid var(--run2you-border);
     color: var(--run2you-text);
 }
@@ -496,8 +484,8 @@ body, html {
    SOLUTION PAGE — Problem/Solution Sections
    ===================================================== */
 .problem-section {
-    background: linear-gradient(135deg, #fef2f2, #fff1f2);
-    border: 1px solid #fecaca;
+    background: #fffafa;
+    border: 1px solid #fee2e2;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
     margin-bottom: 2rem;
@@ -506,7 +494,7 @@ body, html {
 .problem-section-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #991b1b;
+    color: var(--run2you-text);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -514,9 +502,10 @@ body, html {
 }
 
 .solution-section {
-    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-    border: 1px solid #bbf7d0;
+    background: #ffffff;
+    border: 1px solid var(--run2you-border);
     border-radius: var(--run2you-radius);
+    box-shadow: var(--run2you-shadow-sm);
     padding: 2.5rem;
     margin-bottom: 2rem;
 }
@@ -524,7 +513,7 @@ body, html {
 .solution-section-title {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #166534;
+    color: var(--run2you-text);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -616,23 +605,15 @@ body, html {
     padding: 1.25rem 1.75rem;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--run2you-primary);
+    background: var(--run2you-primary-light);
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    border-bottom: 1px solid var(--run2you-border);
 }
 
-.module-header-runner {
-    background: linear-gradient(135deg, var(--run2you-gradient-start), var(--run2you-gradient-end));
-}
-
-.module-header-customer {
-    background: linear-gradient(135deg, #0891b2, #06b6d4);
-}
-
-.module-header-admin {
-    background: linear-gradient(135deg, #475569, #64748b);
-}
+/* Specific module gradients are removed in favor of a unified theme color approach */
 
 .module-body {
     padding: 1.75rem;
@@ -700,8 +681,8 @@ body, html {
    PRICING PAGE — Cards, Revenue highlight
    ===================================================== */
 .pricing-banner {
-    background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
-    border: 1px solid #bbf7d0;
+    background: var(--run2you-primary-light);
+    border: 1px solid #fecaca;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
     margin-bottom: 2.5rem;
@@ -711,12 +692,12 @@ body, html {
 .pricing-banner-title {
     font-size: 1.75rem;
     font-weight: 800;
-    color: #166534;
+    color: var(--run2you-text);
     margin-bottom: 0.5rem;
 }
 
 .pricing-banner-subtitle {
-    color: #4ade80;
+    color: var(--run2you-text-muted);
     font-size: 1rem;
     font-weight: 500;
 }
@@ -799,8 +780,8 @@ body, html {
 }
 
 .sustainability-card {
-    background: linear-gradient(135deg, #fef2f2, #fff1f2);
-    border: 1px solid #fecaca;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
     border-radius: var(--run2you-radius);
     padding: 2.5rem;
 }
@@ -808,7 +789,7 @@ body, html {
 .sustainability-card h4 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #450a0a;
+    color: var(--run2you-text);
     margin-bottom: 1rem;
 }
 
@@ -840,8 +821,8 @@ body, html {
    ABOUT PAGE — Developer card, objectives
    ===================================================== */
 .about-assignment-card {
-    background: linear-gradient(135deg, #fef2f2, #fff1f2);
-    border: 1px solid #fecaca;
+    background: #f8fafc;
+    border: 1px solid var(--run2you-border);
     border-radius: var(--run2you-radius);
     padding: 2rem;
     margin-bottom: 2rem;

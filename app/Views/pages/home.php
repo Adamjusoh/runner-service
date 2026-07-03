@@ -64,7 +64,7 @@
             </div>
             <h3>Earn While You Shop</h3>
             <p>Are you heading to the grocery store? Make your trip profitable by helping your neighbors! Create a run, set your delivery fee and cut-off time, complete the orders. You keep <strong>100% of your earnings</strong>.</p>
-            <a href="<?= base_url('/register') ?>" class="btn btn-outline-light mt-2">
+            <a href="<?= base_url('/register') ?>" class="btn btn-outline-primary mt-2">
                 <i class="bi bi-arrow-right me-1"></i> Start Running
             </a>
         </div>
