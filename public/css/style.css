@@ -481,8 +481,8 @@ body, html {
 }
 
 .feature-icon-purple {
-    background: #fee2e2;
-    color: #dc2626;
+    background: #f3e8ff;
+    color: #9333ea;
 }
 
 .feature-card-title {
@@ -1387,7 +1387,7 @@ body, html {
 
 .table-manifest thead th {
     background-color: var(--run2you-primary-light);
-    color: #7f1d1d;
+    color: var(--run2you-text);
 }
 
 .qty-cell {
@@ -1410,7 +1410,7 @@ body, html {
 }
 
 .btn-manifest:hover {
-    background-color: #fee2e2;
+    background-color: var(--run2you-primary-light);
     color: var(--run2you-primary-hover);
 }
 
