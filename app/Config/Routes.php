@@ -6,8 +6,14 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
+// Marketing Pages
+$routes->get('/', 'PageController::home');
+$routes->get('/about', 'PageController::about');
+$routes->get('/solution', 'PageController::solution');
+$routes->get('/features', 'PageController::features');
+$routes->get('/pricing', 'PageController::pricing');
+
 // Public Accessible Routes
-$routes->get('/', 'Home::index');
 $routes->get('/login', 'AuthController::login');
 $routes->post('/login', 'AuthController::attemptLogin');
 $routes->get('/register', 'AuthController::register');
